@@ -1,16 +1,20 @@
 package com.test;
 
 public class PassBYR {
-
+	//pass by reference
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String str=new String("test");
-		System.out.println(chngStr(str));
-		System.out.println(str);
+		Dummy d=new Dummy();
+		d.name="initialValue";
+		System.out.println("Initial value is "+d.name);
+		PassBYR byr=new PassBYR();
+		byr.changeString(d);
+		System.out.println("Changed value is "+d.name);	
 	}
 	
-	public static String chngStr(String str) {
-		return str="testing";
+	public void changeString(Dummy s) {
+		s.name="changedValue";
+		
 	}
-
+	
 }
